@@ -1,12 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+
+// Render définit automatiquement une variable PORT, sinon on utilise 3000 en local
+const PORT = process.env.PORT || 3000; 
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const MISTRAL_API_KEY = "tfGgAbSm4ZFMUBzFqPp6ZWhmah3WTCGL";
+// On récupère la clé depuis les variables d'environnement
+const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
 
 const SYSTEM_PROMPT = `Tu es Chronos, l'IA d'assistance de la "TimeTravel Agency".
 Ton rôle est d'accueillir les voyageurs temporels et de les conseiller parmi nos 3 destinations uniques :
@@ -19,6 +22,12 @@ Fais des réponses concises et immersives (2 ou 3 phrases maximum).`;
 
 app.post('/api/chat', async (req, res) => {
     const userMessage = req.body.message;
+    
+    // Sécurité : vérifier si la clé est présente
+    if (!MISTRAL_API_KEY) {
+        return res.status(500).json({ error: "Clé API manquante sur le serveur." });
+    }
+
     try {
         const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
             method: 'POST',
@@ -85,16 +94,15 @@ app.post('/api/quiz', async (req, res) => {
     }
 });
 
-// Route par défaut (Accueil)
+// Routes pour servir les fichiers HTML
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Nouvelle route pour la page des destinations
 app.get('/destinations', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'destinations.html'));
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Serveur lancé ! Navigue sur http://localhost:${PORT}`);
+    console.log(`🚀 Serveur lancé sur le port ${PORT}`);
 });
