@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTravel Agency | Explorez l'Infini</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i data-lucide="clock" class="icon-cyan"></i>
+            <span>TIMETRAVEL <span class="cyan">AGENCY</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#destinations">Destinations</a>
+            <a href="#agence">L'Agence</a>
+            <button class="btn-outline">Réserver</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Technologie Quantum v4.5</span>
+            <h1>LE PRÉSENT EST <br><span class="gradient-text">DÉPASSÉ.</span></h1>
+            <p>Embarquez pour un voyage sans limites à travers les siècles.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">Explorer les époques</button>
+                <button class="btn-ghost">Voir le trailer</button>
+            </div>
+        </div>
+        <div class="orb"></div>
+    </header>
+
+    <section id="destinations" class="destinations">
+        <h2 class="section-title">Destinations Temporelles</h2>
+        <div class="grid">
+            <div class="card" style="--accent: #d4af37;">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1509439581779-6298f75bf6e5?auto=format&fit=crop&w=600')"></div>
+                <div class="card-body">
+                    <span class="era">1889 — Belle Époque</span>
+                    <h3>Paris Universel</h3>
+                    <p>Assistez à l'inauguration de la Tour Eiffel.</p>
+                </div>
+            </div>
+            <div class="card" style="--accent: #22c55e;">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600')"></div>
+                <div class="card-body">
+                    <span class="era">66M BC — Mésozoïque</span>
+                    <h3>Le Crétacé</h3>
+                    <p>Observez les géants de la Terre en liberté.</p>
+                </div>
+            </div>
+            <div class="card" style="--accent: #f97316;">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1543059180-922683d2574b?auto=format&fit=crop&w=600')"></div>
+                <div class="card-body">
+                    <span class="era">1504 — Renaissance</span>
+                    <h3>Florence</h3>
+                    <p>Rencontrez Da Vinci dans son atelier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="chat-widget" class="chat-closed">
+        <button id="chat-toggle">
+            <i data-lucide="message-square"></i>
+        </button>
+        <div class="chat-box">
+            <div class="chat-header">Chronos IA</div>
+            <div class="chat-content" id="chat-content">
+                <p class="bot-msg">Bonjour voyageur. Quelle époque vous tente aujourd'hui ?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Posez votre question...">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
