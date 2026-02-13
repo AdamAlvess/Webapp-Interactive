@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTravel Agency | Explorez l'Infini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i data-lucide="clock" class="icon-cyan"></i>
+            <span>TIMETRAVEL <span class="cyan">AGENCY</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/destinations">Destinations</a>
+            <button class="btn-outline">Réserver</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="assets/timetravel-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="badge">Technologie Quantum v4.5</span>
+            <h1>LE PRÉSENT EST <br><span class="gradient-text">DÉPASSÉ.</span></h1>
+            <p>Embarquez pour un voyage sans limites à travers les siècles.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="window.location.href='/destinations'">Explorer les époques</button>
+                <button class="btn-ghost" onclick="openTrailer()">
+                    <i data-lucide="play" style="width: 18px; height: 18px;"></i> 
+                    Voir le trailer
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="quiz" class="destinations" style="padding-top: 50px; padding-bottom: 50px;">
+        <h2 class="section-title">Test de Compatibilité Temporelle</h2>
+        <div class="card" style="max-width: 600px; margin: 0 auto; padding: 40px; text-align: center; border-color: var(--cyan);">
+            <div id="quiz-content">
+                <i data-lucide="scan-face" style="color: var(--cyan); width: 48px; height: 48px; margin-bottom: 20px;"></i>
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Où devez-vous voyager ?</h3>
+                <p style="color: var(--gray); margin-bottom: 30px;">Laissez notre intelligence artificielle analyser votre profil pour déterminer l'époque qui vous correspond le mieux.</p>
+                <button class="btn-primary" onclick="startQuiz()">Lancer l'analyse</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations" class="destinations">
+        <h2 class="section-title">Aperçu Temporel</h2>
+        <div class="grid">
+            
+            <div class="card" style="--accent: #d4af37;" onclick="window.location.href='/destinations'">
+                <div class="card-img-container">
+                    <img src="assets/paris.png" alt="Paris 1889" class="card-img" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <span class="era">1889 — Belle Époque</span>
+                    <h3>Paris Universel</h3>
+                    <p>Assistez à l'inauguration de la Tour Eiffel.</p>
+                </div>
+            </div>
+            
+            <div class="card" style="--accent: #22c55e;" onclick="window.location.href='/destinations'">
+                <div class="card-img-container">
+                    <img src="assets/cretace.png" alt="Le Crétacé" class="card-img" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <span class="era">66M BC — Mésozoïque</span>
+                    <h3>Le Crétacé</h3>
+                    <p>Observez les géants de la Terre en liberté.</p>
+                </div>
+            </div>
+            
+            <div class="card" style="--accent: #f97316;" onclick="window.location.href='/destinations'">
+                <div class="card-img-container">
+                    <img src="assets/florence.png" alt="Florence 1504" class="card-img" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <span class="era">1504 — Renaissance</span>
+                    <h3>Florence</h3>
+                    <p>Rencontrez Da Vinci dans son atelier.</p>
+                </div>
+            </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+             <button class="btn-outline" onclick="window.location.href='/destinations'">Voir toutes les caractéristiques</button>
+        </div>
+    </section>
+
+    <div id="chat-widget" class="chat-closed">
+        <button id="chat-toggle">
+            <i data-lucide="message-square"></i>
+        </button>
+        <div class="chat-box">
+            <div class="chat-header">Chronos IA</div>
+            <div class="chat-content" id="chat-content">
+                <p class="bot-msg">Bonjour voyageur. Quelle époque vous tente aujourd'hui ?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Posez votre question...">
+            </div>
+        </div>
+    </div>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeTrailer()"><i data-lucide="x"></i></button>
+            <video id="trailer-video" controls>
+                <source src="assets/timetravel-bg.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

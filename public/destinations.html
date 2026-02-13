@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Destinations | TimeTravel Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body style="padding-top: 100px;"> <nav class="navbar">
+        <a href="/" class="logo">
+            <i data-lucide="clock" class="icon-cyan"></i>
+            <span>TIMETRAVEL <span class="cyan">AGENCY</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/destinations" class="cyan">Destinations</a>
+            <button class="btn-outline">Réserver</button>
+        </div>
+    </nav>
+
+    <div class="destinations-header text-center" style="text-align: center; margin-bottom: 50px;">
+        <h1 style="font-size: 4rem; font-weight: 900;">CATALOGUE <span class="gradient-text">TEMPOREL</span></h1>
+        <p style="color: var(--gray); font-size: 1.2rem;">Découvrez en détail les époques qui s'offrent à vous.</p>
+    </div>
+
+    <section class="destinations-detail-list" style="max-width: 1000px; margin: 0 auto; padding: 0 5%; display: flex; flex-direction: column; gap: 60px;">
+        
+        <div class="detail-card" style="display: flex; gap: 30px; background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid var(--cyan); align-items: center;">
+            <div style="flex: 1; height: 300px;">
+                <img src="assets/paris.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Paris">
+            </div>
+            <div style="flex: 1; padding: 30px;">
+                <span class="era" style="color: #d4af37;">1889 — Belle Époque</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Paris Universel</h2>
+                <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">Plongez au cœur de l'effervescence de la Belle Époque. Promenez-vous sur le Champ de Mars et soyez parmi les premiers à gravir la toute nouvelle Tour Eiffel. Une époque d'innovation, de culture et d'élégance absolue.</p>
+                <button class="btn-primary" style="padding: 10px 24px;">Réserver cette époque</button>
+            </div>
+        </div>
+
+        <div class="detail-card" style="display: flex; flex-direction: row-reverse; gap: 30px; background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid #22c55e; align-items: center;">
+            <div style="flex: 1; height: 300px;">
+                <img src="assets/cretace.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Crétacé">
+            </div>
+            <div style="flex: 1; padding: 30px;">
+                <span class="era" style="color: #22c55e;">66M BC — Mésozoïque</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Le Crétacé</h2>
+                <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">Pour les aventuriers dans l'âme. Explorez des jungles vierges à la flore titanesque et observez les dinosaures dans leur habitat naturel. Notre champ de force quantique vous garantit une observation en toute sécurité.</p>
+                <button class="btn-primary" style="padding: 10px 24px; background: linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);">Réserver cette époque</button>
+            </div>
+        </div>
+
+        <div class="detail-card" style="display: flex; gap: 30px; background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid #f97316; align-items: center;">
+            <div style="flex: 1; height: 300px;">
+                <img src="assets/florence.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Florence">
+            </div>
+            <div style="flex: 1; padding: 30px;">
+                <span class="era" style="color: #f97316;">1504 — Renaissance</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Florence</h2>
+                <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">L'apogée de l'art et de l'ingénierie humaine. Arpentez les rues de la cité toscane, visitez l'atelier de Léonard de Vinci et assistez à la création des plus grands chefs-d'œuvre de l'humanité.</p>
+                <button class="btn-primary" style="padding: 10px 24px; background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);">Réserver cette époque</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="chat-widget" class="chat-closed">
+        <button id="chat-toggle">
+            <i data-lucide="message-square"></i>
+        </button>
+        <div class="chat-box">
+            <div class="chat-header">Chronos IA</div>
+            <div class="chat-content" id="chat-content">
+                <p class="bot-msg">Bonjour voyageur. Quelle époque vous tente aujourd'hui ?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Posez votre question...">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
